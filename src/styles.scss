@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic&amp;subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Charmonman');
+
+@import '~@angular/material/theming';
+
+
+$general-typography: mat-typography-config(
+  $font-family: '"Charmonman", "Roboto"',
+  $body-2:        mat-typography-level(14px, 24px, 600)
+);
+
+$secondary-typography: mat-typography-config(
+  $font-family: 'Roboto, sans-serif'
+);
+
+
+// Be sure that you only ever include this mixin once!
+@include mat-core($general-typography);
+
+
+$my-app-primary: mat-palette($mat-indigo);
+$my-app-accent:  mat-palette($mat-amber, A200, A100, A400);
+$my-app-warn:    mat-palette($mat-red);
+
+$my-app-theme: mat-light-theme($my-app-primary, $my-app-accent, $my-app-warn);
+
+
+@include angular-material-theme($my-app-theme);
+
+
+
+// RESET
+body {
+  margin: 0;
+  background: #F1F2E1;
+}

@@ -1,0 +1,32 @@
+
+h1 {
+  font-size: 60px;
+  line-height: 100px;
+  text-transform: capitalize;
+  margin: auto;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+section {
+  margin: 2rem 0 0 0;
+}
+
+.name_container {
+  height: 120px;
+}
+
+button {
+  text-transform: uppercase;
+  font-family: 'Roboto';
+}
+
+mat-checkbox {
+  margin: 1rem;
+}
