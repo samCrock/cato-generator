@@ -42,7 +42,7 @@ export class AppComponent {
     if (this.variants.addPiju) {
       cationary = cationary.concat(piju);
     }
-    let iterations = Math.floor(Math.random() * 4) + 1;
+    let iterations = Math.floor(Math.random() * 4) + 2;
     this.name = '';
     while (iterations > 0 && cationary.length > 0) {
       const i = Math.floor(Math.random() * cationary.length);
@@ -54,6 +54,17 @@ export class AppComponent {
   }
 
   private capitalize() {
+    const name = document.getElementById('name');
+    name.style.fontSize = 'calc(10px + 10vw)';
+    if (this.name.length > 10) {
+      name.style.fontSize = 'calc(10px + 9vw)';
+    }
+    if (this.name.length > 15) {
+      name.style.fontSize = 'calc(10px + 8vw)';
+    }
+    if (this.name.length > 20) {
+      name.style.fontSize = 'calc(10px + 6vw)';
+    }
     return this.name.charAt(0).toUpperCase() + this.name.slice(1);
   }
 
