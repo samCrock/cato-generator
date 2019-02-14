@@ -335,8 +335,6 @@ MIT
 @angular/forms
 MIT
 
-@angular/material/checkbox
-
 zone.js
 MIT
 The MIT License
