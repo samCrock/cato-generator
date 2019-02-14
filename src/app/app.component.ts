@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   name = '';
   variants = {
-    addTabooki: false,
-    addPiju: false
+    tabooki: true,
+    piju: true
   };
 
   public generate() {
@@ -36,10 +36,10 @@ export class AppComponent {
       'buki'
     ];
     let cationary = base;
-    if (this.variants.addTabooki) {
+    if (this.variants.tabooki) {
       cationary = cationary.concat(tabooki);
     }
-    if (this.variants.addPiju) {
+    if (this.variants.piju) {
       cationary = cationary.concat(piju);
     }
     let iterations = Math.floor(Math.random() * 4) + 2;
@@ -66,6 +66,10 @@ export class AppComponent {
       name.style.fontSize = 'calc(10px + 6vw)';
     }
     return this.name.charAt(0).toUpperCase() + this.name.slice(1);
+  }
+
+  toggle(type: string) {
+    this.variants[type] = !this.variants[type];
   }
 
 }

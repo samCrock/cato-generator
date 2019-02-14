@@ -1,17 +1,16 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div class="container" style="text-align:center">
   <div class="name_container">
-    <h1 class="mat-h1">{{ name }}</h1>
+    <h1 class="mat-h1" id="name">{{ name }}</h1>
   </div>
   <div>
     <button mat-fab (click)="generate()">
       <mat-icon class="primary" aria-label="Generate Cato">pets</mat-icon>
     </button>
   </div>
-  <section class="example-section">
-      <mat-checkbox class="example-margin" [(ngModel)]="variants.addTabooki">Tabooki</mat-checkbox>
-      <mat-checkbox class="example-margin" [(ngModel)]="variants.addPiju">Piju</mat-checkbox>
-    </section>
+  <section>
+    <button mat-button [ngClass]="variants.tabooki ? 'on' : 'off'" (click)="toggle('tabooki')">Tabooki</button>
+    <button mat-button [ngClass]="variants.piju ? 'on' : 'off'" (click)="toggle('piju')">Pijumanji</button>
+  </section>
 </div>
 
 <router-outlet></router-outlet>
